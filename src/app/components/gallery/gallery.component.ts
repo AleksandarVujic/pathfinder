@@ -14,7 +14,6 @@ import { PathfinderSpinnerComponent } from '../../shared/pathfinder-spinner/path
 export class GalleryComponent implements OnInit {
   postImagesList: Post[] = [];
   isLoading: boolean = true;
-  shouldLoadMore: boolean = false;
   page: number = 1;
   pageSize: number = 30;
 
@@ -22,10 +21,6 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
-  }
-
-  ngAfterViewInit() {
-    this.shouldLoadMore = this.onLoadMoreScroll();
   }
 
   private loadData() {
@@ -43,7 +38,7 @@ export class GalleryComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
-    if (this.shouldLoadMore) {
+    if (this.onLoadMoreScroll()) {
       this.page++;
       this.loadData();
     }
@@ -52,6 +47,6 @@ export class GalleryComponent implements OnInit {
   onLoadMoreScroll(): boolean {
     const scrollPosition = window.innerHeight + window.scrollY;
     const pageHeight = document.documentElement.scrollHeight;
-    return scrollPosition + 1 >= pageHeight;
+    return scrollPosition + 50 >= pageHeight;
   }
 }

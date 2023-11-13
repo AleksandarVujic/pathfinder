@@ -15,7 +15,6 @@ import {
   RxVirtualScrollViewportComponent,
   FixedSizeVirtualScrollStrategy,
 } from '@rx-angular/template/experimental/virtual-scrolling';
-import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
   selector: 'app-statistics',
@@ -49,17 +48,6 @@ export class StatisticsComponent {
 
   private loadStatsData() {
     this.totalStats$ = this.statisticsService.getTotalStatistics();
-    // this.isLoading = true;
-    // .subscribe({
-    //   next: (response) => {
-    //     this.totalStats = response;
-    //     this.isLoading = false;
-    //   },
-    //   error: (err) => {
-    //     console.error('Error fetching data:', err);
-    //     this.isLoading = false;
-    //   },
-    // });
   }
 
   private loadTableData() {

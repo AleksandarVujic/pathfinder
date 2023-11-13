@@ -11,8 +11,8 @@ export class NotFoundPageComponent {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    setTimeout(() => {
-      this.router.navigate(['']);
-    }, 5000);
+    // setTimeout(() => {
+    //   this.router.navigate(['']);
+    // }, 5000);
   }
 }
