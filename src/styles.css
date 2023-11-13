@@ -1,1 +1,282 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
+:root[data-theme="light"] {
+  --primary-color: #ff9400;
+  --primary-color-dark: #004953;
+  --secondary-color: #fafcff;
+  --text-light: #767268;
+  --text-dark: #333333;
+  --extra-light: #fafafa;
+  --golden-color: #c3941c;
+  --max-width: 1200px;
+  --box-shadow-1: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  --box-shadow-2: 5px 5px 30px rgba(0, 0, 0, 0.7);
+
+  --theme-aspectRatio-2-3: 2/3;
+  --theme-aspectRatio-16-9: 16/9;
+  --theme-aspectRatio-4-3: 4/3;
+}
+
+:root[data-theme="dark"] {
+  --primary-color: #ffc100;
+  --primary-color-dark: #4d6366;
+  --secondary-color: #2d2d30;
+  --text-light: #c4c4c4;
+  --text-dark: #fafafa;
+  --extra-light: #121212;
+  --golden-color: #c3941c;
+  --max-width: 1200px;
+  --box-shadow-1: 5px 5px 30px rgba(255, 255, 255, 0.1);
+  --box-shadow-2: 5px 5px 30px rgba(255, 255, 255, 0.3);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #333;
+}
+
+.aspectRatio-free {
+  width: 100%;
+  display: block;
+  height: fit-content;
+  max-height: 800px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.section__title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.section__subtitle {
+  font-size: 1rem;
+  color: var(--text-dark);
+  max-width: calc(var(--max-width) / 2);
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: #fafafa;
+  background-color: var(--primary-color);
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.link a {
+  padding: 0 1rem;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+/* =============================================================== */
+.destination {
+  background-color: var(--extra-light);
+}
+
+.destination__nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.destination__nav span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-content: center;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 100%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.destination__nav span:hover {
+  color: var(--extra-light);
+  background-color: var(--primary-color);
+}
+
+.destination__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.destination__card {
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  cursor: pointer;
+}
+
+.destination__card img {
+  border-radius: 1rem;
+  height: fit-content;
+}
+
+.destination__details {
+  position: absolute;
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  bottom: -6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fafafa;
+  background-color: rgba(200, 200, 200, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.destination__card:hover .destination__details {
+  bottom: 1rem;
+}
+
+.destination__title {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.destination__subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ==================================================================================== */
+
+.trip,
+.gallery {
+  background-color: var(--secondary-color);
+}
+
+.trip__container :is(.section__title, .section__subtitle, .view__all) {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.trip__grid,
+.stat__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+/* ========================================================================= */
+
+@media (width< 1200px) {
+  .header__image img:nth-child(1) {
+    max-width: 300px;
+  }
+  .header__image img:nth-child(2) {
+    max-width: 200px;
+  }
+}
+
+@media (width< 900px) {
+  .nav__links {
+    display: none;
+  }
+
+  .header__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .header__image {
+    min-height: 500px;
+  }
+
+  .destination__grid {
+    gap: 1rem;
+  }
+
+  .trip__grid,
+  .stat__grid,
+  .destination__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width<600px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trip__grid,
+  .stat__grid,
+  .destination__grid,
+  .gallery__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

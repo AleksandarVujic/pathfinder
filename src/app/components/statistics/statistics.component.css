@@ -1,0 +1,99 @@
+.stat__card {
+  min-width: 250px;
+  min-height: 250px;
+  border-radius: 2rem;
+  box-shadow: var(--box-shadow-1);
+  background-color: var(--extra-light);
+  text-align: center;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.stat__card:hover {
+  transform: scale(1.03);
+}
+
+.stat__card #counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-flow: column;
+}
+
+img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+
+.list {
+  height: 500px;
+}
+
+/* TABLE CSS */
+.table-stats {
+  border: 1px solid #327a81;
+  border: 1px solid var(--primary-color-dark);
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow-1);
+  margin: 1em auto;
+  overflow: hidden;
+  overflow-x: auto;
+  width: 100%;
+}
+
+rx-virtual-scroll-viewport {
+  height: 45vh;
+}
+
+table {
+  width: 100%;
+}
+
+table td,
+table th {
+  color: var(--primary-color-dark);
+  padding: 1.5rem;
+  vertical-align: middle;
+}
+
+table td {
+  text-align: center;
+  vertical-align: middle;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table td:first-child {
+  margin: auto;
+}
+
+table td:last-child {
+  font-size: 0.95em;
+  text-align: left;
+}
+
+table th {
+  background-color: var(--extra-light);
+  font-weight: 300;
+}
+
+table tr {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+}
+
+table tr:nth-child(2n) {
+  background-color: #fff;
+}
+
+table tr:nth-child(2n + 1):not(:first-child) {
+  background-color: #edf7f8;
+}
+
+td i {
+  font-size: 36px;
+}

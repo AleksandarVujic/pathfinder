@@ -1,0 +1,18 @@
+<section class="trip">
+    <div class="section__container gallery__container">
+        <h2 class="section__title">Our Gallery</h2>
+        <p class="section__subtitle">
+            Take a look at our Gallery to see some impressive photos of our PathFinding!
+        </p>
+        <pathfinder-spinner [isLoading]="isLoading"></pathfinder-spinner>
+        <section class="gallery" *ngIf="!isLoading">
+            <div *ngFor="let images of postImagesList">
+                <img [ngSrc]="images.urls.small.replace('https://images.unsplash.com', '')"
+                    [alt]="images.alt_description" [width]="1080" [height]="720" class="aspectRatio-free">
+            </div>
+        </section>
+
+        <pathfinder-spinner [isLoading]="onLoadMoreScroll()"></pathfinder-spinner>
+
+    </div>
+</section>

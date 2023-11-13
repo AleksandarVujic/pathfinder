@@ -1,0 +1,131 @@
+.subscribe {
+  background-color: var(--secondary-color);
+}
+
+.subscribe__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.subscribe__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscribe__form form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  box-shadow: var(--box-shadow-1);
+  border-radius: 5rem;
+}
+
+.subscribe__form input {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5rem 0 0 5rem;
+  font-size: 1rem;
+}
+
+.btn-subscribe {
+  border-radius: 0 5rem 5rem 0;
+}
+
+.footer {
+  background-color: var(--primary-color-dark);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  /* color: var(--secondary-color); */
+  color: #fafafa;
+}
+
+.footer__col h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.footer__col h3 span {
+  color: var(--primary-color);
+}
+
+.footer__col p {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color: var(--primary-color);
+}
+
+.footer__col p span {
+  font-weight: 600;
+}
+
+.social__icons {
+  font-size: 2.5rem;
+  display: flex;
+}
+
+.social__icons a {
+  margin-right: 20px;
+  color: #fafafa;
+}
+
+.social__icons a:hover {
+  color: var(--primary-color);
+}
+
+.footer__col h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.footer__bar {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  color: #fafafa;
+  border-top: 1px solid var(--text-light);
+}
+
+.footer__bar a {
+  font-size: 1rem;
+  color: var(--primary-color);
+  transition: 0.5s;
+}
+
+.footer__bar a:hover {
+  padding: 0 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+
+@media (width< 900px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width<600px) {
+  .subscribe__container,
+  .footer__container {
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

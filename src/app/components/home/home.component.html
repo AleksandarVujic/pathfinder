@@ -1,0 +1,51 @@
+<app-header></app-header>
+<!-- Detination Section -->
+<section class="destination">
+    <div class="section__container destination__container">
+        <div class="section__header">
+            <div>
+                <h2 class="section__title">Explore top destinations</h2>
+                <p class="section__subtitle">
+                    We wander for distraction, but we travel for fulfilment.
+                </p>
+            </div>
+            <div class="destination__nav">
+                <span><i class="ri-arrow-left-s-line"></i></span>
+                <span><i class="ri-arrow-right-s-line"></i></span>
+            </div>
+        </div>
+
+        <div class="destination__grid">
+            <div class="destination__card" *ngFor="let destination of topDestinations">
+                <img [src]="destination.imagePath" alt="top destination" width="400" height="600">
+                <div class="destination__details">
+                    <p class="destination__title">{{destination.title}}</p>
+                    <p class="destination__subtitle">{{destination.subtitle}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- END OF Destionation Section -->
+<!-- Trip Section  -->
+<section class="trip">
+    <div class="section__container trip__container">
+        <h2 class="section__title">Take a look our destinations</h2>
+        <p class="section__subtitle">
+            Explore your suitable and dream places around the world. Travel is fatal to prejudice, bigotry, and
+            narrow-mindedness.
+        </p>
+        <div class="trip__grid">
+            <div *ngFor="let trip of trips">
+                <pathfinder-card [title]="trip.title" [stars]="trip.stars" [price]="trip.price"
+                    [assetsURL]="trip.imageUrl">
+                </pathfinder-card>
+            </div>
+        </div>
+        <div class="view__all">
+            <button [routerLink]="'/destinations'" class="btn">View All</button>
+        </div>
+    </div>
+</section>
+<!-- END OF Trip Section  -->

@@ -1,0 +1,26 @@
+<nav>
+    <a [routerLink]="''">
+        <div class="nav__logo">Pathfinder<span>.</span></div>
+    </a>
+    <ul class="nav__links">
+        <li class="link"><a [routerLink]="'/home'" routerLinkActive="active-link">Home</a></li>
+        <li class="link"><a [routerLink]="'/destinations'" routerLinkActive="active-link">Destinations</a></li>
+        <li class="link"><a [routerLink]="'/gallery'" routerLinkActive="active-link">Gallery</a></li>
+        <li class="link"><a [routerLink]="'/statistics'" routerLinkActive="active-link">Stats</a></li>
+    </ul>
+    <div class="nav__links">
+        <dark-mode-toggle></dark-mode-toggle>
+        <button class="btn">Contact</button>
+        <button class="hamburger__btn" (click)="toggleMenu()">
+            <i class="{{isHamburgerMenuOpen? 'ri-close-fill icon' : 'ri-menu-3-fill icon'}}"></i>
+        </button>
+    </div>
+</nav>
+
+<nav class="hamburger__menu" [ngClass]="isHamburgerMenuOpen?'open_menu':'close_menu'">
+    <li class="link"><a [routerLink]="'/home'" (click)="closeMenu()">Home</a></li>
+    <li class="link"><a [routerLink]="'/destinations'" (click)="closeMenu()">Destinations</a></li>
+    <li class="link"><a [routerLink]="'/gallery'" (click)="closeMenu()">Gallery</a></li>
+    <li class="link"><a [routerLink]="'/statistics'" (click)="closeMenu()">Stats</a></li>
+    <button class="btn">Contact</button>
+</nav>

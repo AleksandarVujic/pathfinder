@@ -1,0 +1,31 @@
+<header>
+    <video-overlay *ngIf="isVideoOpen" (click)="closeVideo()" [unsafeUrl]="videoUrl"></video-overlay>
+
+    <div class="section__container header__container">
+        <div class="header__content">
+            <div>
+                <p class="sub__header">Check Now</p>
+                <h1 class="nav__logo">Pathfinder<span>.</span> Personal travel blog</h1>
+                <p class="section__subtitle">
+                    A good traveller has no fixed plans and is not intent on arriving.
+                </p>
+                <div class="action__btns">
+                    <button class="btn">Explore</button>
+                    <div class="story">
+                        <div class="video__image">
+                            <img [src]="storyImage" alt="story">
+                            <a class="play_story_btn" (click)="openVideo()">
+                                <span><i class="ri-play-fill"></i></span>
+                            </a>
+                        </div>
+                        <span>Watch our story</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__image">
+            <img src="/assets/header-1.jpg" alt="header">
+            <img src="/assets/header-2.jpg" alt="header">
+        </div>
+    </div>
+</header>

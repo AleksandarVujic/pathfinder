@@ -1,0 +1,13 @@
+.not-found {
+  text-align: center;
+  padding: 200px;
+}
+
+.not-found h1 {
+  font-size: 7rem;
+  color: var(--primary-color-dark);
+}
+
+.not-found p {
+  font-size: 2.5rem;
+}

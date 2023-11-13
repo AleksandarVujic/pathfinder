@@ -1,0 +1,17 @@
+<div class="trip__card">
+    <ng-container *ngIf="imageURL; else newDeb">
+        <img [ngSrc]="imageURL" alt="trip" width="1080" height="720">
+    </ng-container>
+    <ng-template #newDeb>
+        <img [src]="assetsURL" alt="trip" width="400" height="300">
+    </ng-template>
+
+    <div class="trip__details">
+        <p>{{title}}</p>
+        <div class="stars"><i class="ri-star-fill"></i> {{stars}}</div>
+        <div class="travel__price">
+            <div class="price"><span>Spent:</span> {{price}}$</div>
+            <button class="read__now">Read Now</button>
+        </div>
+    </div>
+</div>

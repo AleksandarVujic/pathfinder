@@ -1,0 +1,57 @@
+<section class="trip">
+    <div class="section__container trip__container">
+        <h2 class="section__title">Trips in numbers</h2>
+        <p class="section__subtitle">
+            Drop an eye in numbers. How many images are there, dates, likes, expenses, and more...
+        </p>
+
+        <pathfinder-spinner [isLoading]="isLoading"></pathfinder-spinner>
+
+        <div class="stat__grid" *ngIf="totalStats$ | async as stats">
+            <div class="stat__card">
+                <div id="counter">
+                    <h3 class="section__subtitle">Likes</h3>
+                    <p class="section__title">{{stats.applications}}
+                    </p>
+                </div>
+            </div>
+            <div class="stat__card">
+                <div id="counter">
+                    <h3 class="section__subtitle">Number of Photos</h3>
+                    <p class="section__title">{{stats.photographers}}</p>
+                </div>
+            </div>
+            <div class="stat__card">
+                <div id="counter">
+                    <h3 class="section__subtitle">Views</h3>
+                    <p class="section__title">{{stats.views_per_second}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-stats">
+            <table cellspacing="0">
+                <tr>
+                    <th>Picture</th>
+                    <th>Title</th>
+                    <th>Published</th>
+                    <th>Updated</th>
+                    <th>Painted in...</th>
+                    <th>Description</th>
+                </tr>
+                <rx-virtual-scroll-viewport [itemSize]="120" [runwayItems]="1">
+                    <tr *rxVirtualFor="let tableItem of tableData">
+                        <td><img [src]="tableItem.preview_photos[0].urls.small" alt="table_img" /></td>
+                        <td>{{tableItem.title}}</td>
+                        <td>{{tableItem.published_at | date:"MMM dd, yyyy 'at' H:mm" }} </td>
+                        <td>{{tableItem.updated_at | date:"MMM dd, yyyy 'at' H:mm"}}</td>
+                        <td><i class="ri-circle-fill" [ngStyle]="{'color': tableItem.cover_photo.color}"></i>
+                        </td>
+                        <td>{{tableItem.cover_photo.alt_description || 'No Description'}}</td>
+                    </tr>
+                </rx-virtual-scroll-viewport>
+            </table>
+        </div>
+
+    </div>
+</section>
