@@ -2,7 +2,13 @@ import { Component, Renderer2 } from '@angular/core';
 import { NgIf } from '@angular/common';
 
 import { VideoOverlayComponent } from '../../shared/video-overlay/video-overlay.component';
-import { STORY_IMAGE, YOUTUBE_VIDEO } from 'src/app/constants';
+import {
+  HEADER_1,
+  HEADER_2,
+  NO_IMAGE,
+  STORY_IMAGE,
+  YOUTUBE_VIDEO,
+} from 'src/app/constants';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +21,9 @@ export class HeaderComponent {
   isVideoOpen: boolean = false;
   videoUrl: string = YOUTUBE_VIDEO;
   storyImage: string = STORY_IMAGE;
+  headerImgBig: string = HEADER_1;
+  headerImgSmall: string = HEADER_2;
+  noImagePlaceholder: string = NO_IMAGE;
 
   constructor(private renderer: Renderer2) {}
 

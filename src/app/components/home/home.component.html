@@ -17,7 +17,7 @@
 
         <div class="destination__grid">
             <div class="destination__card" *ngFor="let destination of topDestinations">
-                <img [src]="destination.imagePath" alt="top destination" width="400" height="600">
+                <img [src]="destination.imagePath || noImagePlaceholder" alt="top destination" width="400" height="600">
                 <div class="destination__details">
                     <p class="destination__title">{{destination.title}}</p>
                     <p class="destination__subtitle">{{destination.subtitle}}</p>
@@ -39,7 +39,7 @@
         <div class="trip__grid">
             <div *ngFor="let trip of trips">
                 <pathfinder-card [title]="trip.title" [stars]="trip.stars" [price]="trip.price"
-                    [assetsURL]="trip.imageUrl">
+                    [assetsURL]="trip.imageUrl || noImagePlaceholder">
                 </pathfinder-card>
             </div>
         </div>

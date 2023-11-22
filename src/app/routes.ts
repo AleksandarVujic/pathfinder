@@ -38,10 +38,3 @@ export const ROUTES: Routes = [
     redirectTo: 'page-not-found',
   },
 ];
-
-// --primary-color: #fbc108;
-// --primary-color-dark: #072f54;
-// --secondary-color: #fafcff;
-// --text-dark: #2f455c;
-// --text-light: #939393;
-// --extra-light: #fff;

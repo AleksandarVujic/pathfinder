@@ -5,18 +5,19 @@
             Explore your suitable and dream places around the world. Here you can find
             your right destionation.
         </p>
-        <pathfinder-spinner [isLoading]="isLoading"></pathfinder-spinner>
-        <div class="trip__grid" *ngIf="!isLoading">
+        <ng-template #noData>
+            <pathfinder-spinner></pathfinder-spinner>
+        </ng-template>
+        <div class="trip__grid" *ngIf="data$ | async as data; else noData">
             <div *ngFor="let item of data">
                 <span #postsList>
                     <pathfinder-card [title]="item.user.location || item.alt_description" [stars]="item.likes"
-                        [price]="item.height"
-                        [imageURL]="item.urls.small.replace('https://images.unsplash.com', '')"></pathfinder-card>
+                        [price]="item.height" [imageURL]="formatImageUrl(item.urls.full)"></pathfinder-card>
                 </span>
             </div>
         </div>
         <div class="view__all">
-            <button class="btn" (click)="loadMore()">Load More...</button>
+            <button class="btn" (click)="loadMore()" aria-label="load more">Load More...</button>
         </div>
     </div>
 </section>

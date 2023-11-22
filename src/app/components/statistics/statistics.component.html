@@ -5,9 +5,12 @@
             Drop an eye in numbers. How many images are there, dates, likes, expenses, and more...
         </p>
 
-        <pathfinder-spinner [isLoading]="isLoading"></pathfinder-spinner>
 
-        <div class="stat__grid" *ngIf="totalStats$ | async as stats">
+        <ng-template #loading>
+            <pathfinder-spinner></pathfinder-spinner>
+        </ng-template>
+
+        <div class="stat__grid" *ngIf="(totalStats$ | async) as stats; else loading">
             <div class="stat__card">
                 <div id="counter">
                     <h3 class="section__subtitle">Likes</h3>
@@ -31,14 +34,16 @@
 
         <div class="table-stats">
             <table cellspacing="0">
-                <tr>
-                    <th>Picture</th>
-                    <th>Title</th>
-                    <th>Published</th>
-                    <th>Updated</th>
-                    <th>Painted in...</th>
-                    <th>Description</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Picture</th>
+                        <th>Title</th>
+                        <th>Published</th>
+                        <th>Updated</th>
+                        <th>Painted in...</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
                 <rx-virtual-scroll-viewport [itemSize]="120" [runwayItems]="1">
                     <tr *rxVirtualFor="let tableItem of tableData">
                         <td><img [src]="tableItem.preview_photos[0].urls.small" alt="table_img" /></td>

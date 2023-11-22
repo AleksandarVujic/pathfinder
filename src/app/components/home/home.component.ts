@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { CardComponent } from '../../shared/card/card.component';
 import { HeaderComponent } from '../header/header.component';
 import {
+  NO_IMAGE,
   TOP_DESTINATION_1,
   TOP_DESTINATION_2,
   TOP_DESTINATION_3,
@@ -29,6 +30,7 @@ import { Trip } from 'src/app/models/trip.interface';
   ],
 })
 export class HomeComponent {
+  noImagePlaceholder: string = NO_IMAGE;
   topDestinations: TopDestination[] = [
     {
       title: 'Cenote Suytun',
@@ -64,4 +66,6 @@ export class HomeComponent {
       imageUrl: TRIP_3,
     },
   ];
+
+  constructor() {}
 }

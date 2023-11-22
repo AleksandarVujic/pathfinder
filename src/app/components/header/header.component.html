@@ -14,9 +14,9 @@
                     <div class="story">
                         <div class="video__image">
                             <img [src]="storyImage" alt="story">
-                            <a class="play_story_btn" (click)="openVideo()">
+                            <button class="play_story_btn" (click)="openVideo()" aria-label="Play our story">
                                 <span><i class="ri-play-fill"></i></span>
-                            </a>
+                            </button>
                         </div>
                         <span>Watch our story</span>
                     </div>
@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class="header__image">
-            <img src="/assets/header-1.jpg" alt="header">
-            <img src="/assets/header-2.jpg" alt="header">
+            <img [src]="headerImgBig || noImagePlaceholder" alt="header" fetchPriority="high">
+            <img [src]="headerImgSmall || noImagePlaceholder" alt="header" fetchPriority="high">
         </div>
     </div>
 </header>

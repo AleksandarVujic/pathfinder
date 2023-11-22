@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +11,8 @@ export class NotFoundPageComponent {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   this.router.navigate(['']);
-    // }, 5000);
+    setTimeout(() => {
+      this.router.navigate(['']);
+    }, 5000);
   }
 }

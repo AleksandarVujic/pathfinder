@@ -1,6 +1,14 @@
 <div class="trip__card">
     <ng-container *ngIf="imageURL; else newDeb">
-        <img [ngSrc]="imageURL" alt="trip" width="1080" height="720">
+        <img
+            [ngSrc]="imageURL" 
+            width="640" 
+            height="480"
+            alt="trip"
+            >
+            <!-- On custom image loader we can set custom ngSrcset -->
+            <!-- [ngSrcset]="'154w, 185w, 342w, 500w, 780w'" 
+            sizes=" (min-width: 900px) 400px, 65vw" -->
     </ng-container>
     <ng-template #newDeb>
         <img [src]="assetsURL" alt="trip" width="400" height="300">

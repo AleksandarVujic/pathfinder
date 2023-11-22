@@ -9,5 +9,5 @@ import { NgIf } from '@angular/common';
   imports: [NgIf],
 })
 export class PathfinderSpinnerComponent {
-  @Input() isLoading!: boolean;
+  @Input() isLoading?: boolean = true;
 }

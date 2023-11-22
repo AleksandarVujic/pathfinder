@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { provideImgixLoader } from '@angular/common';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideImgixLoader } from '@angular/common'; // EMBEDED IMAGE LOADER
+import { provideClientHydration } from '@angular/platform-browser'; // NON-DESTRUCTIVE HYDRATION
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { ROUTES } from './routes';
+import { provideUnsplashImageLoader } from './config/images/image-loader'; // CUSTOM IMAGE LOADER
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
     HttpClientModule,
     NavigationComponent,
     FooterComponent,
@@ -24,8 +23,9 @@ import { ROUTES } from './routes';
     }),
   ],
   providers: [
-    provideImgixLoader(`https://images.unsplash.com`),
-    provideClientHydration(),
+    provideUnsplashImageLoader(), // CUSTOM IMAGE LOADER
+    // provideImgixLoader(`https://images.unsplash.com`), // EMBEDED IMAGE LOADER
+    provideClientHydration(), // NON-DESTRUCTIVE HYDRATION
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule],

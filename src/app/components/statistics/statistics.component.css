@@ -72,7 +72,11 @@ table td:first-child {
 
 table td:last-child {
   font-size: 0.95em;
-  text-align: left;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 table th {
@@ -84,6 +88,10 @@ table tr {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   align-items: center;
+}
+
+table thead tr {
+  background-color: var(--extra-light);
 }
 
 table tr:nth-child(2n) {
