@@ -1,27 +1,19 @@
-# TravelBlogDemo
+# Pathfinder - Travel blog
+
+https://pathfinder-travel-blog.web.app/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
-## Code scaffolding
+For SSR(Server side rendering) run `npm run dev:ssr ` and navigate to `httt://localhost:4200/`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Pathfinder is small travel blog application, created for demonstrating tools and techniques which are boosting performance and enhancing UX within Angular applications. This application is used as demo app for company internal conference event.
 
-## Build
+Pathfinder leverages the power of Server Side Rendering (SSR) coupled with non-destructive hydration, seamlessly blending server-generated content with client-side interactivity. This sophisticated approach ensures lightning-fast initial page loads, providing users with a swift and engaging experience right from the get-go.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Pathfinder showcases Angular's directive NgOptimizedImage, a powerful tool optimizing image loading and rendering for improved performance. This not only enhances the visual appeal of the travel blog but also contributes to a smoother overall browsing experience.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Application incorporates the revolutionary virtual scrolling feature from the rx-angular library. This innovative addition dynamically loads and unloads elements as the user scrolls.
